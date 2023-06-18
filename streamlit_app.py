@@ -42,5 +42,8 @@ my_data_rows = my_cur.fetchall()
 streamlit.text("Fruit load list constains")
 streamlit.dataframe(my_data_rows)
 
+#allow end user to add fruit to a list
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','jackfruit')
 streamlit.write('Thanks for adding ', add_my_fruit)
+
+my_cur.execute("insert into fruit_load_list values('from streamlit')")
